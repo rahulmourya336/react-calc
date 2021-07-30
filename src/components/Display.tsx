@@ -1,15 +1,7 @@
-import React from 'react';
+import { FC } from 'react';
 import { DisplayPropType } from '../Models/Display';
 import { Screen } from '../styles';
 
-const Display = ({ valueToShow }: DisplayPropType) => {
-    return (
-        <>
-            <Screen>
-                {valueToShow}
-            </Screen>
-        </>
-    );
-}
+const Display: FC<DisplayPropType> = ({ valueToShow }) => <Screen>  {valueToShow}  </Screen>;
 
 export default Display;

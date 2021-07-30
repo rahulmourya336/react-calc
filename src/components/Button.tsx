@@ -1,15 +1,11 @@
-import React from 'react';
+import { FC } from 'react';
 import { ButtonPropType } from '../Models/Button';
 import { Key } from '../styles';
 
-const Button = ({ label, value, onButtonPress }: ButtonPropType) => {
-    return (
-        <>
-            <Key onClick={() => onButtonPress(value)}>
-                {label}
-            </Key>
-        </>
-    );
-}
+const Button: FC<ButtonPropType> = ({ label, value, onButtonPress }) => (
+    <Key onClick={() => onButtonPress(value)}>
+        {label}
+    </Key>
+);
 
-export default Button
+export default Button;
