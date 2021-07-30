@@ -2,16 +2,11 @@
   margin:0px;
   padding: 0px;
   box-sizing: border-box;
+  font-family: 'Roboto Mono', monospace;
 }
 
 body {
   margin: 0;
-  font-family: 'Roboto Mono', monospace;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-}
-
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
 }
