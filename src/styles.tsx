@@ -16,7 +16,7 @@ border: 1px solid lightgrey;
 
 export const Screen = styled.div`
 height: 70px;
-border-radius: 20px;
+border-radius: 5px;
 width: 100%;
 margin: 20px;
 padding: 10px;
@@ -25,6 +25,7 @@ backgroundColor: lightgrey;
 border: 1px solid darkgrey;
 text-align: right;
 outline: 0;
+overflow: overlay;
 `;
 
 export const Key = styled.button`
