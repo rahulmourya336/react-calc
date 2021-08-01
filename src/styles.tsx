@@ -19,7 +19,7 @@ border-radius: 20px;
 border: 1px solid lightgrey;
 background: ${bgMinimumDark};
 @media (max-width: ${mobileDevicePX}) {
-    width: 100%;
+    width: 95%;
     height: 520px;
   }
 `;
