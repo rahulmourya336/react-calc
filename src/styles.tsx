@@ -17,6 +17,10 @@ flex-wrap:wrap;
 border-radius: 20px;
 border: 1px solid lightgrey;
 background: ${bgMinimumDark};
+@media (max-width: 375px) {
+    width: 100%;
+    height: 500px;
+  }
 `;
 
 export const Screen = styled.div`
