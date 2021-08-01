@@ -2,8 +2,7 @@ export type ButtonPropType = {
     label: string,
     value: string,
     classes: string,
-    // TODO: replace with function
-    onButtonPress: any;
+    onButtonPress: Function;
 };
 
 export type buttonListType = {
