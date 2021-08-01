@@ -7,6 +7,7 @@ const greenColor = '#43ffdc';
 const bgDark = '#2e323c';
 const bgMinimumDark = '#292d36';
 const operatorDisplayColor = '#9ea2ac';
+const mobileDevicePX = '470px';
 
 export const Wrapper = styled.div`
 width: 290px;
@@ -17,9 +18,9 @@ flex-wrap:wrap;
 border-radius: 20px;
 border: 1px solid lightgrey;
 background: ${bgMinimumDark};
-@media (max-width: 375px) {
+@media (max-width: ${mobileDevicePX}) {
     width: 100%;
-    height: 500px;
+    height: 520px;
   }
 `;
 
@@ -68,6 +69,10 @@ flex-basis: ${props => props.className.includes('long-btn') ? '40%' : 'none' };
 &:active {
     box-shadow: inset 20px 20px 15px ${buttonActiveColor};
     opacity: 0.6;
+}
+@media (max-width: ${mobileDevicePX}) {
+  flex: 1 0 18%;
+  flex-basis: ${props => props.className.includes('long-btn') ? '40%' : 'none' };
 }
 `;
 
