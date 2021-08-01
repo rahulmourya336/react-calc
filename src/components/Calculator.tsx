@@ -1,11 +1,11 @@
-import React, { useState } from 'react';
+import React, { FC, useState } from 'react';
 import calculate from '../Logic/calculate';
 import { buttonList, buttonListType } from '../Models/Button';
 import { KeyContainer } from '../styles';
 import Button from './Button';
 import Display from './Display';
 
-const Calculator = () => {
+const Calculator: FC = () => {
     const [_state, _setState] = useState<any>({
         next: null,
         operation: null,
