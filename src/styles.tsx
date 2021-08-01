@@ -6,6 +6,7 @@ const orangeColor = '#ff8585';
 const greenColor = '#43ffdc';
 const bgDark = '#2e323c';
 const bgMinimumDark = '#292d36';
+const operatorDisplayColor = '#9ea2ac';
 
 export const Wrapper = styled.div`
 width: 290px;
@@ -15,6 +16,7 @@ display: flex;
 flex-wrap:wrap;
 border-radius: 20px;
 border: 1px solid lightgrey;
+background: ${bgMinimumDark};
 `;
 
 export const Screen = styled.div`
@@ -28,6 +30,16 @@ color: #fff;
 border-radius: 5px 5px 0 0;
 padding: 45px 10px 0 10px;
 margin: 0px;
+height: 135px;
+`;
+
+export const Operator = styled.span`
+display: block;
+padding: 0;
+margin: 0;
+line-height: 1.5;
+font-size: smaller;
+color: ${operatorDisplayColor};
 `;
 
 export const ScreenWrapper = styled.div`
@@ -46,11 +58,12 @@ border: none;
 font-size: x-large;
 cursor: pointer;
 outline: 0;
-background: #292D36;
-color: ${props => props.className === 'orange' ? orangeColor : props.className === 'green' ? greenColor : buttonColor};
-flex-basis: ${props => props.className === 'long-btn' ? '40%' : 'none' };
+background: ${bgMinimumDark};
+color: ${props => props.className.includes('orange') ? orangeColor : props.className.includes('green') ? greenColor : buttonColor};
+flex-basis: ${props => props.className.includes('long-btn') ? '40%' : 'none' };
 &:active {
-    box-shadow: inset 0px 0px 5px ${buttonActiveColor};
+    box-shadow: inset 20px 20px 15px ${buttonActiveColor};
+    opacity: 0.6;
 }
 `;
 
