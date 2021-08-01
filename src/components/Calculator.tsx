@@ -1,70 +1,38 @@
 import React, { useState } from 'react';
+import calculate from '../Logic/calculate';
+import { buttonList, buttonListType } from '../Models/Button';
+import { KeyContainer } from '../styles';
 import Button from './Button';
 import Display from './Display';
 
-const buttonList = [
-    'AC', '±', '%', '÷',
-    '7', '8', '9', '×',
-    '4', '5', '6', '-',
-    '1', '2', '3', '+',
-    '0', '.', '='
-];
-
 const Calculator = () => {
-    const [output, setOutput] = useState('0');
-    const [input, setInput] = useState('');
-    const [operator, setOperator] = useState('');
+    const [_state, _setState] = useState<any>({
+        next: null,
+        operation: null,
+        total: null,
+    });
+
 
     const handleButtonClick = (inputValue: string) => {
-        if (inputValue === buttonList[0]) {
-            setOutput('0');
-        }
-        else {
-            // Add if number
-            if (/\d/g.test(inputValue)) {
-                if (operator) {
-                    setOutput(inputValue);
-                    const prevValue = parseFloat(input);
-                    const nextValue = parseFloat(input);
-
-                    const newValue: number = performCalculation[operator](prevValue, nextValue);
-
-                    setOutput(String(newValue));
-                    setInput(String(newValue));
-                    setOperator('');
-                } else {
-                    setInput(input + inputValue);
-                    setOutput(output + inputValue);
-                }
-            } else {
-                setOperator(inputValue);
-            }
-            console.log('Button Pressed', inputValue);
-        }
+        const result = calculate(_state, inputValue);
+        if (!result) return;
+        _setState(result);
     }
-
-    const performCalculation: any = {
-        '/': (previousValue: number, nextValue: number) => previousValue / nextValue,
-        '*': (previousValue: number, nextValue: number) => previousValue * nextValue,
-        '-': (previousValue: number, nextValue: number) => previousValue - nextValue,
-        '+': (previousValue: number, nextValue: number) => previousValue + nextValue,
-        '=': (previousValue: number, nextValue: number) => nextValue
-    }
-
 
     return (
         <>
-            <Display valueToShow={output} />
-
-            {
-                buttonList.map((value: string, idx: number) => {
-                    return (
-                        <React.Fragment key={idx} >
-                            <Button label={value} value={value} onButtonPress={handleButtonClick} />
-                        </React.Fragment>
-                    )
-                })
-            }
+            <Display valueToShow={_state.next || _state.total || "0" } operator={_state.operation}/>
+            <KeyContainer>
+                {
+                    buttonList.map((btnValue: buttonListType, idx: number) => {
+                        return (
+                            <React.Fragment key={idx} >
+                                <Button label={btnValue.name} value={btnValue.value} onButtonPress={handleButtonClick} classes={btnValue.classes} />
+                            </React.Fragment>
+                        )
+                    })
+                }
+            </KeyContainer>
         </>
     );
 }
