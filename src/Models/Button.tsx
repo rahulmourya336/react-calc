@@ -88,7 +88,7 @@ export const buttonList: Array<buttonListType> = [{
 {
     name: '0',
     value: '0',
-    classes: 'long-btn',
+    classes: '',
 },
 {
     name: '.',
@@ -98,6 +98,6 @@ export const buttonList: Array<buttonListType> = [{
 {
     name: '=',
     value: '=',
-    classes: 'orange',
+    classes: 'orange long-btn',
 }
 ];

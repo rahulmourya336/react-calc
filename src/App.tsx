@@ -1,12 +1,13 @@
-import React from 'react';
-import Calculator from './components/Calculator';
-import { Wrapper } from './styles';
+import Calculator from './Components/Calculator';
+import { Container, Wrapper } from './styles';
 
 function App() {
   return (
-    <Wrapper>
-      <Calculator />
-    </Wrapper>
+    <Container >
+      <Wrapper>
+        <Calculator />
+      </Wrapper>
+    </Container>
   );
 }
 
