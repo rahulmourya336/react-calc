@@ -1,4 +1,4 @@
 export type DisplayPropType = {
-    valueToShow: string;
-    operator?: string;
+  valueToShow: string;
+  operator?: string;
 };
