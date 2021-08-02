@@ -1,7 +1,8 @@
-import Calculator from './components/Calculator';
+import { FC } from 'react';
+import Calculator from './components/calculator';
 import { Container, Wrapper } from './styles';
 
-function App() {
+const App: FC = ()  => {
   return (
     <Container >
       <Wrapper>
